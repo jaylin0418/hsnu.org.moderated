@@ -2,17 +2,17 @@ import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 
 // icons
-import medium from "../../images/icons/socialMedia/medium.svg"
-import twitter from "../../images/icons/socialMedia/twitter.svg"
-import github from "../../images/icons/socialMedia/github.svg"
-import patreon from "../../images/icons/socialMedia/patreon.svg"
+import map from "../../images/icons/socialMedia/map.svg"
+import phone from "../../images/icons/socialMedia/phone.svg"
 
 const Footer = () => {
   const footers = [
-    { name: "twitter", link: "https://twitter.com", icon: twitter },
-    { name: "medium", link: "https://medium.com", icon: medium },
-    { name: "github", link: "https://github.com", icon: github },
-    { name: "patreon", link: "https://patreon.com", icon: patreon },
+    { name: "map", link: "https://goo.gl/maps/zm7LiQ1AZLLZmn4h8", icon: map },
+    {
+      name: "phone",
+      link: "https://www.hs.ntnu.edu.tw/contactn/telfax/",
+      icon: phone,
+    },
   ]
 
   return (
@@ -21,9 +21,7 @@ const Footer = () => {
         <Container fluid>
           <Row>
             <Col lg="6" className={"logo"}>
-              <h2 className={"is-2 bold"}>
-                Made by team <a href="https://hsnu.org">hsnu.org</a>
-              </h2>
+              <h2 className={"is-2 bold"}>聯絡資訊：(02)2707-5215</h2>
             </Col>
             <Col lg="6" className={"icons"}>
               {footers.map(icon => (
