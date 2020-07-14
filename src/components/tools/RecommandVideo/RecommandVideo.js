@@ -5,7 +5,11 @@ import "./RecommandVideo.scss"
 
 const RecommandVideo = () => {
   return (
-    <Sticky className={"RecommandVideo"} topOffset={80}>
+    <Sticky
+      className={"RecommandVideo"}
+      topOffset={80}
+      disabled={document.documentElement.clientWidth < 992 ? true : false}
+    >
       {/* title */}
       <h2 className={"is-2 bold"}>推薦內容</h2>
 
