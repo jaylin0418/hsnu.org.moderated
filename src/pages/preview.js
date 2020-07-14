@@ -34,7 +34,8 @@ export default () => {
           genre: res.data[0].acf.genre,
           date: res.data[0].date,
           urls: res.data[0].acf.repeater_link,
-          author: res.data[0].author_meta.author_last_name,
+          office: res.data[0].author_meta.author_last_name,
+          section: res.data[0].author_meta.author_first_name,
         })
       })
       .catch(err => {
@@ -66,7 +67,8 @@ export default () => {
                 date={post.date}
                 content={post.content}
                 urls={post.urls}
-                author={post.author}
+                office={post.office}
+                section={post.section}
               />
             ) : (
               <Content title={status} />

@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import "./Content.scss"
 import Files from "../Files/Files"
 
-const Content = ({ title, genre, date, content, urls, author }) => {
+const Content = ({ title, genre, date, content, urls, office, section }) => {
   return (
     <article className={"content"}>
       {/* title */}
@@ -14,8 +14,9 @@ const Content = ({ title, genre, date, content, urls, author }) => {
       <div className={"meta"}>
         <p className={"is-5 light"}>{genre}</p>
         <p className={"is-5 light"}>{date ? date.slice(0, 10) : null}</p>
+        <p className={"is-5 light"}>{section ? section : null}</p>
         <p className={"is-5 tag"}>
-          <Link to={`/search?author=${author}`}>{author}</Link>
+          <Link to={`/search?author=${office}`}>{office}</Link>
         </p>
       </div>
 

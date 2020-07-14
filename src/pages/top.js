@@ -34,7 +34,8 @@ export default () => {
           genre: data[0].acf.genre,
           date: data[0].date,
           urls: data[0].acf.repeater_link,
-          // author: data[0].author_meta.author_description,
+          office: res.data[0].author_meta.author_last_name,
+          section: res.data[0].author_meta.author_first_name,
         })
 
         console.log(post)
@@ -69,7 +70,8 @@ export default () => {
                 date={post.date}
                 content={post.content}
                 urls={post.urls}
-                author={"管理者"}
+                office={post.office}
+                section={post.section}
               />
             ) : (
               <Content title={status} />

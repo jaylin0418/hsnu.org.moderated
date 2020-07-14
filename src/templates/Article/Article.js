@@ -32,9 +32,13 @@ export default ({ data }) => {
               date={data.allWordpressWpSpost.edges[0].node.date}
               content={data.allWordpressWpSpost.edges[0].node.content}
               urls={data.allWordpressWpSpost.edges[0].node.acf.repeater_link}
-              author={
+              office={
                 data.allWordpressWpSpost.edges[0].node.author_meta
                   .author_last_name
+              }
+              section={
+                data.allWordpressWpSpost.edges[0].node.author_meta
+                  .author_first_name
               }
             />
             <LazyLoadComponent>
@@ -67,6 +71,7 @@ export const query = graphql`
             }
           }
           author_meta {
+            author_first_name
             author_last_name
           }
         }
