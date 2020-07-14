@@ -119,8 +119,11 @@ export const Header = () => {
             </Nav.Item> */}
 
             <Nav.Item>
-              <Nav.Link className={"is-5 bold"} href="/english">
-                English
+              <Nav.Link
+                className={"is-5 bold"}
+                href="https://sites.google.com/a/pccu.edu.tw/guo-li-shi-da-fu-zhong72jie-jia-zhang-hui/guan-yu-ben-hui?previewAsViewer=1"
+              >
+                家長會
               </Nav.Link>
             </Nav.Item>
 
