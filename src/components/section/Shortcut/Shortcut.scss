@@ -1,5 +1,8 @@
 #Shortcut {
   display: none;
+  a {
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 992px) {

@@ -38,6 +38,21 @@ export default () => {
                       </a>
                     </ListGroup.Item>
                   ))}
+                  <ListGroup.Item as="li">
+                    <a
+                      className={"is-4"}
+                      onClick={() => {
+                        const sidebar = document.querySelector("#sidebar")
+                        const overlay = document.querySelector(
+                          "#sidebar-overlay"
+                        )
+                        sidebar.classList.toggle("active")
+                        overlay.classList.toggle("active")
+                      }}
+                    >
+                      更多...
+                    </a>
+                  </ListGroup.Item>
                 </ListGroup>
               </Col>
             ))
