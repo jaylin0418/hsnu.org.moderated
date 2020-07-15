@@ -9,7 +9,7 @@ import "./SideNews.scss"
 const SideNews = ({ infinity = false, hideMobile = false }) => {
   const GraphqlNews = useStaticQuery(graphql`
     {
-      allWordpressWpNews(limit: 5, skip: 2) {
+      allWordpressWpNews(limit: 5, filter: { acf: { censored: { eq: "2" } } }) {
         edges {
           node {
             title

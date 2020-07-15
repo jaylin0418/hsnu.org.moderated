@@ -33,7 +33,11 @@ export const LandingPure = ({ headline }) => {
 const Landing = () => {
   const headline = useStaticQuery(graphql`
     {
-      allWordpressWpNews(limit: 1, sort: { fields: date, order: DESC }) {
+      allWordpressWpNews(
+        limit: 1
+        sort: { fields: date, order: DESC }
+        filter: { acf: { censored: { eq: "1" } } }
+      ) {
         edges {
           node {
             title

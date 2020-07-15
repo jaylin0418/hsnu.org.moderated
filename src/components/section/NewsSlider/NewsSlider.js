@@ -20,7 +20,11 @@ const newsSlider = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const newses = useStaticQuery(graphql`
     {
-      allWordpressWpNews(limit: 4, skip: 1) {
+      allWordpressWpNews(
+        limit: 4
+        skip: 1
+        filter: { acf: { censored: { eq: "2" } } }
+      ) {
         edges {
           node {
             title
@@ -31,6 +35,7 @@ const newsSlider = () => {
                 }
               }
               link
+              censored
             }
           }
         }
