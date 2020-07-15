@@ -129,7 +129,7 @@ const PostsList = ({ posts }) => {
                 ))
             : current_posts.map(post => (
                 <Col className={"post"} key={post.node.wordpress_id}>
-                  <Link to={`/post/${post.node.wordpress_id}`}>
+                  <Link to={`/preview?id=${post.node.wordpress_id}`}>
                     <p
                       className={"is-4"}
                       dangerouslySetInnerHTML={{ __html: post.node.title }}

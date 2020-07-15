@@ -18,7 +18,7 @@ export default ({ data }) => {
       <Seo
         title={data.allWordpressWpSpost.edges[0].node.title}
         description={data.allWordpressWpSpost.edges[0].node.content}
-        pathname={`/post/${data.allWordpressWpSpost.edges[0].node.wordpress_id}`}
+        pathname={`/preview?id=${data.allWordpressWpSpost.edges[0].node.wordpress_id}`}
         article
       />
 

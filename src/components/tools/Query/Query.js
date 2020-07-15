@@ -11,7 +11,7 @@ export default ({ results }) => {
       <Row>
         {results.map(result => (
           <Col className={"search-result"} key={result.id}>
-            <Link to={`/post/${result.id}`}>
+            <Link to={`preview?id=${result.id}`}>
               {/* title */}
               <h3
                 className={"is-3 bold"}
