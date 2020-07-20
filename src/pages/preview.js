@@ -5,7 +5,7 @@ import { LazyLoadComponent } from "react-lazy-load-image-component"
 import axios from "axios"
 
 // style
-import "../templates/Article/Article.scss"
+import "./Article.scss"
 
 // tools
 import SideNews from "../components/tools/SidewNews/SideNews"
@@ -34,8 +34,8 @@ export default () => {
           genre: res.data[0].acf.genre,
           date: res.data[0].date,
           urls: res.data[0].acf.repeater_link,
-          office: res.data[0].author_meta.author_last_name,
-          section: res.data[0].author_meta.author_first_name,
+          office: res.data[0].acf.last_name,
+          section: res.data[0].acf.first_name,
         })
       })
       .catch(err => {

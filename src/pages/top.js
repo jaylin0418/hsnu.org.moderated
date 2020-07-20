@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import { LazyLoadComponent } from "react-lazy-load-image-component"
 
 // style
-import "../templates/Article/Article.scss"
+import "./Article.scss"
 
 // tools
 import SideNews from "../components/tools/SidewNews/SideNews"
@@ -34,8 +34,8 @@ export default () => {
           genre: data[0].acf.genre,
           date: data[0].date,
           urls: data[0].acf.repeater_link,
-          office: res.data[0].author_meta.author_last_name,
-          section: res.data[0].author_meta.author_first_name,
+          office: data[0].acf.last_name,
+          section: data[0].acf.first_name,
         })
 
         console.log(post)
