@@ -114,7 +114,7 @@ const Clubs = () => {
   // get clubs data from wordpress
   const clubs = useStaticQuery(graphql`
     {
-      allWordpressWpClubs {
+      allWordpressWpClubs(limit: 10) {
         edges {
           node {
             title

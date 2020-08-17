@@ -35,7 +35,7 @@ const PostsList = ({ posts }) => {
   ]
 
   const [current_posts, setCurrent_posts] = useState(posts.studentPosts.edges)
-  const [genreNow, setGenreNow] = useState("allPosts")
+  const [genreNow, setGenreNow] = useState("topPosts")
 
   // get latest posts
   const [new_post, setNew_post] = useState([{ title: "loading...", id: 1 }])
