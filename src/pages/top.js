@@ -49,12 +49,7 @@ export default () => {
   return (
     <>
       {post ? (
-        <Seo
-          title={post.title}
-          description={post.content}
-          pathname={`/top?id=${wordpress_id}`}
-          article
-        />
+        <Seo title={post.title} description={post.content} />
       ) : (
         <Seo article />
       )}
