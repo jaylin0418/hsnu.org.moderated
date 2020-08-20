@@ -1,3 +1,7 @@
+/////////////////////////////////////////////////////
+// This section get first 4 blocks from menu, and set it as shortcuts
+/////////////////////////////////////////////////////
+
 import React, { useEffect, useState } from "react"
 import { Container, Row, Col, ListGroup } from "react-bootstrap"
 
@@ -7,7 +11,7 @@ export default () => {
   // fetch data from wordpress
   const [blocks, setBlocks] = useState()
   useEffect(() => {
-    fetch("https://wordpress.hsnu.org/index.php/wp-json/wp/v2/menu?per_page=1")
+    fetch("https://wordpress.hsnu.org/index.php/wp-json/wp/v2/menu?x`x`x`zz=1")
       .then(res => {
         return res.json()
       })
