@@ -1,5 +1,5 @@
 //////////////////////////////////////
-// The component is a post list with genre tab
+// The component is a post list with genre tab (Graphql used)
 //////////////////////////////////////
 
 import React, { useEffect, useState } from "react"

@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql } from "gatsby"
 import { LazyLoadComponent } from "react-lazy-load-image-component"
 
 import Seo from "../components/layout/Seo"

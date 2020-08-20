@@ -1,12 +1,19 @@
+//////////////////////////////////////////////////////
+// This component is for side news around the websit
+// Args:
+//  infinity (bool): If the news feed should be infinity.
+//  hideMobile (bool): True if you want to hide this component in mobile.
+//////////////////////////////////////////////////////
+
 import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { LazyLoadImage } from "react-lazy-load-image-component"
-import PropTypes from "prop-types"
 import axios from "axios"
 
 import "./SideNews.scss"
 
 const SideNews = ({ infinity = false, hideMobile = false }) => {
+  // get news from graphql
   const GraphqlNews = useStaticQuery(graphql`
     {
       allWordpressWpNews(limit: 5, filter: { acf: { censored: { eq: "2" } } }) {
@@ -132,10 +139,6 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
         : null}
     </section>
   )
-}
-
-SideNews.prototype = {
-  newses: PropTypes.array,
 }
 
 export default SideNews
