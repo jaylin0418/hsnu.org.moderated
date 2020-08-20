@@ -4,7 +4,6 @@ import { LazyLoadComponent } from "react-lazy-load-image-component"
 
 import Seo from "../components/layout/Seo"
 import Landing from "../components/section/Landing/Landing"
-// import NewsSlider from "../components/section/NewsSlider/NewsSlider"
 import Clubs from "../components/section/Clubs/Clubs"
 import Banner from "../components/section/Banner/Banner"
 import Blog from "../components/section/Blog/Blog"

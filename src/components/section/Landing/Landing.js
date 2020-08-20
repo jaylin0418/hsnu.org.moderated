@@ -1,3 +1,13 @@
+///////////////////////////////////////////////////////////
+//
+// The section use to show case the content from student. (Graphql used)
+//
+// The censored attribute in graphql query indicate how seveare the censorship should be.
+// 1: The cover and the content is all about school.
+// 2: The content is about school.
+// 3: It's not about school. (Will be showed only in hsnu.org)
+///////////////////////////////////////////////////////////
+
 import React from "react"
 import { Jumbotron } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
