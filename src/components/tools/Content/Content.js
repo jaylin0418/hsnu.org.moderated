@@ -4,7 +4,16 @@ import { Link } from "gatsby"
 import "./Content.scss"
 import Files from "../Files/Files"
 
-const Content = ({ title, genre, date, content, urls, office, section }) => {
+const Content = ({
+  title,
+  genre,
+  date,
+  content,
+  urls,
+  files,
+  office,
+  section,
+}) => {
   return (
     <article className={"content"}>
       {/* title */}
@@ -21,10 +30,7 @@ const Content = ({ title, genre, date, content, urls, office, section }) => {
       </div>
 
       {/* files */}
-      <Files
-        //  files={files}
-        urls={urls}
-      ></Files>
+      <Files files={files} urls={urls}></Files>
 
       {/* context */}
       <p

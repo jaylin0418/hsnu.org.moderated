@@ -109,7 +109,7 @@ const PostsList = ({ posts }) => {
             ? genreNow === "allPosts"
               ? new_post.map(post => (
                   <Col className={"post"} key={post.id}>
-                    <Link to={`/preview?id=${post.id}`}>
+                    <Link to={`/preview?id=${post.id}&post_type=spost`}>
                       <p
                         className={"is-4"}
                         dangerouslySetInnerHTML={{ __html: post.title }}
@@ -119,7 +119,7 @@ const PostsList = ({ posts }) => {
                 ))
               : top.map(post => (
                   <Col className={"post"} key={post.id}>
-                    <Link to={`/top?id=${post.id}`}>
+                    <Link to={`/preview?id=${post.id}&post_type=top`}>
                       <p
                         className={"is-4"}
                         dangerouslySetInnerHTML={{ __html: post.title }}
