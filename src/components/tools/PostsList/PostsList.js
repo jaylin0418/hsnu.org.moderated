@@ -1,41 +1,68 @@
+//////////////////////////////////////
+// The component is a post list with genre tab
+//////////////////////////////////////
+
 import React, { useEffect, useState } from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col, Nav } from "react-bootstrap"
-import PropTypes from "prop-types"
 
 import "./Postslist.scss"
 
-const PostsList = ({ posts }) => {
-  // toggle tabs
-  useEffect(() => {
-    // please select the text inside .genre (.genre > h2)
-    const genres = document.querySelectorAll(".genre:not(.more) h2")
-    for (var i = 0; i < genres.length; i++) {
-      genres[i].addEventListener("click", e => {
-        // clear all .active
-        for (var i = 0; i < genres.length; i++) {
-          if (genres[i].classList.contains("active")) {
-            genres[i].classList.remove("active")
+const PostsList = () => {
+  // get other post type by graphql
+  const posts = useStaticQuery(graphql`
+    {
+      studentPosts: allWordpressWpSpost(
+        filter: { acf: { genre: { eq: "學生" } } }
+        limit: 10
+        sort: { fields: date, order: DESC }
+      ) {
+        edges {
+          node {
+            title
+            wordpress_id
           }
         }
+      }
+      teacherPosts: allWordpressWpSpost(
+        filter: { acf: { genre: { eq: "教師" } } }
+        limit: 10
+        sort: { fields: date, order: DESC }
+      ) {
+        edges {
+          node {
+            title
+            wordpress_id
+          }
+        }
+      }
 
-        e.target.classList.add("active")
-      })
+      racePosts: allWordpressWpSpost(
+        filter: { acf: { genre: { eq: "競賽" } } }
+        limit: 10
+        sort: { fields: date, order: DESC }
+      ) {
+        edges {
+          node {
+            title
+            wordpress_id
+          }
+        }
+      }
+      researchPosts: allWordpressWpSpost(
+        filter: { acf: { genre: { eq: "講座及課程" } } }
+        limit: 10
+        sort: { fields: date, order: DESC }
+      ) {
+        edges {
+          node {
+            title
+            wordpress_id
+          }
+        }
+      }
     }
-  }, [])
-
-  // tabs
-  const genreTabs = [
-    { name: "最新", codeName: "allPosts" },
-    { name: "置頂", codeName: "topPosts" },
-    { name: "學生", codeName: "studentPosts" },
-    { name: "研習", codeName: "researchPosts" },
-    { name: "競賽", codeName: "racePosts" },
-    { name: "教師", codeName: "teacherPosts" },
-  ]
-
-  const [current_posts, setCurrent_posts] = useState(posts.studentPosts.edges)
-  const [genreNow, setGenreNow] = useState("allPosts")
+  `)
 
   // get latest posts
   const [new_post, setNew_post] = useState([{ title: "loading...", id: 1 }])
@@ -72,6 +99,37 @@ const PostsList = ({ posts }) => {
         )
       })
   }, [])
+
+  // when toggle tabs
+  useEffect(() => {
+    // please select the text inside .genre (.genre > h2)
+    const genres = document.querySelectorAll(".genre:not(.more) h2")
+    for (var i = 0; i < genres.length; i++) {
+      genres[i].addEventListener("click", e => {
+        // clear all .active
+        for (var i = 0; i < genres.length; i++) {
+          if (genres[i].classList.contains("active")) {
+            genres[i].classList.remove("active")
+          }
+        }
+
+        e.target.classList.add("active")
+      })
+    }
+  }, [])
+
+  // tabs
+  const genreTabs = [
+    { name: "最新", codeName: "allPosts" },
+    { name: "置頂", codeName: "topPosts" },
+    { name: "學生", codeName: "studentPosts" },
+    { name: "研習", codeName: "researchPosts" },
+    { name: "競賽", codeName: "racePosts" },
+    { name: "教師", codeName: "teacherPosts" },
+  ]
+
+  const [current_posts, setCurrent_posts] = useState(posts.studentPosts.edges)
+  const [genreNow, setGenreNow] = useState("allPosts")
 
   return (
     <div className={"posts"}>
@@ -143,10 +201,6 @@ const PostsList = ({ posts }) => {
       </Container>
     </div>
   )
-}
-
-PostsList.prototype = {
-  posts: PropTypes.array,
 }
 
 export default PostsList

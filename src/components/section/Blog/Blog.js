@@ -1,3 +1,7 @@
+/////////////////////////////////////////////
+// The section list new post and side news
+////////////////////////////////////////////
+
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 
@@ -7,13 +11,13 @@ import "./Blog.scss"
 import PostLists from "../../tools/PostsList/PostsList"
 import SideNews from "../../tools/SidewNews/SideNews"
 
-const Blog = ({ posts }) => {
+const Blog = () => {
   return (
     <Container as="section" id="Blog">
       <Row>
         {/* posts */}
         <Col lg="7">
-          <PostLists posts={posts} />
+          <PostLists />
         </Col>
 
         {/* side news (component) */}

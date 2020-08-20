@@ -9,15 +9,13 @@ import Banner from "../components/section/Banner/Banner"
 import Blog from "../components/section/Blog/Blog"
 import Shortcut from "../components/section/Shortcut/Shortcut"
 
-export default ({ data }) => {
-  console.log(data)
-
+export default () => {
   return (
     <>
       <Seo title={"師大附中"} />
       <Landing />
       <LazyLoadComponent>
-        <Blog posts={data} />
+        <Blog />
       </LazyLoadComponent>
       <LazyLoadComponent>
         <Shortcut />
@@ -31,57 +29,3 @@ export default ({ data }) => {
     </>
   )
 }
-
-export const query = graphql`
-  {
-    studentPosts: allWordpressWpSpost(
-      filter: { acf: { genre: { eq: "學生" } } }
-      limit: 10
-      sort: { fields: date, order: DESC }
-    ) {
-      edges {
-        node {
-          title
-          wordpress_id
-        }
-      }
-    }
-    teacherPosts: allWordpressWpSpost(
-      filter: { acf: { genre: { eq: "教師" } } }
-      limit: 10
-      sort: { fields: date, order: DESC }
-    ) {
-      edges {
-        node {
-          title
-          wordpress_id
-        }
-      }
-    }
-
-    racePosts: allWordpressWpSpost(
-      filter: { acf: { genre: { eq: "競賽" } } }
-      limit: 10
-      sort: { fields: date, order: DESC }
-    ) {
-      edges {
-        node {
-          title
-          wordpress_id
-        }
-      }
-    }
-    researchPosts: allWordpressWpSpost(
-      filter: { acf: { genre: { eq: "講座及課程" } } }
-      limit: 10
-      sort: { fields: date, order: DESC }
-    ) {
-      edges {
-        node {
-          title
-          wordpress_id
-        }
-      }
-    }
-  }
-`
