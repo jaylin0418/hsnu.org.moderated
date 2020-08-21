@@ -11,7 +11,7 @@ export default ({ results }) => {
       <Row>
         {results.map(result => (
           <Col className={"search-result"} key={result.id}>
-            <Link to={`preview?id=${result.id}`}>
+            <Link to={`preview?id=${result.id}&post_type=spost`}>
               {/* title */}
               <h3
                 className={"is-3 bold"}
@@ -20,8 +20,10 @@ export default ({ results }) => {
 
               {/* meta */}
               <div className={"meta"}>
-                <p className={"is-5 light"}>教務處</p>
-                <p className={"is-5 light"}>2020/1/11</p>
+                <p className={"is-5 light"}>
+                  {result.acf.last_name ? result.acf.last_name : "管理者"}
+                </p>
+                <p className={"is-5 light"}>{result.date.slice(0, 10)}</p>
                 {/* <p classNam e={"is-5 tag"}>熱門</p> */}
               </div>
             </Link>

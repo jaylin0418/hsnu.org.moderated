@@ -25,7 +25,9 @@ const Content = ({
         <p className={"is-5 light"}>{date ? date.slice(0, 10) : null}</p>
         <p className={"is-5 light"}>{section ? section : null}</p>
         <p className={"is-5 tag"}>
-          <Link to={`/search?author=${office}`}>{office}</Link>
+          <Link to={`/search?author=${office}`}>
+            {office ? office : "管理者"}
+          </Link>
         </p>
       </div>
 
