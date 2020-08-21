@@ -60,7 +60,7 @@ export const Sidebar = () => {
         {/* menu cards*/}
         <ul className={"menu-cards"}>
           {/* frequents */}
-          <li key={frequent.title}>
+          {/* <li key={frequent.title}>
             <ul className={"menu-card"}>
               <h4 className={"is-4 bold"}>{frequent.title}</h4>
               {frequent.items.map(item => (
@@ -71,7 +71,7 @@ export const Sidebar = () => {
                 </li>
               ))}
             </ul>
-          </li>
+          </li> */}
 
           {/* tools from WP */}
           {blocks
