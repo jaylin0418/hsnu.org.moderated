@@ -10,6 +10,10 @@ export const Sidebar = () => {
     title: "常用功能",
     items: [
       {
+        title: "後台操作手冊",
+        url: "https://hsnu.org/preview?id=61801&post_type=spost",
+      },
+      {
         title: "二代校務",
         url: "https://sschool.tp.edu.tw/Login.action?schNo=330301",
       },
