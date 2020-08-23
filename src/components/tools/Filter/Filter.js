@@ -111,7 +111,7 @@ export default ({ id }) => {
 
       {/* submit */}
       <Button variant="primary" type="submit">
-        Submit
+        Search
       </Button>
     </Form>
   )
