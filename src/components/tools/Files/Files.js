@@ -11,7 +11,7 @@ const Content = ({ files, urls }) => {
           ? files.map(file => (
               <>
                 <a
-                  href={file.file.url.source_url}
+                  href={file.file.url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

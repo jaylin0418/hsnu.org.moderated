@@ -50,7 +50,8 @@
     "react-sticky-el": "^2.0.5",
     "shuffle-array": "^1.0.1",
     "styled-components": "^4.4.1",
-    "swiper": "^5.3.7"
+    "swiper": "^5.3.7",
+    "urlencode": "^1.1.0"
   },
   "devDependencies": {
     "@testing-library/cypress": "^6.0.0",
